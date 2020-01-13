@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ComboBox x:Name="ComboBox1" ItemsSource="{Binding cbItems}" SelectedItem="{Binding ElementName=Label1, Path=Content}"   HorizontalAlignment="Left" Margin="82,76,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" SelectionChanged="ComboBox1_SelectionChanged"/>
+        <Label x:Name="Label1" Grid.ColumnSpan="2" Content="Label" HorizontalAlignment="Left" Margin="514,143,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

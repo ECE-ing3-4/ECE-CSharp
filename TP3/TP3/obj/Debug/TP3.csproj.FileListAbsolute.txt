@@ -1,0 +1,14 @@
+D:\ECE\ing4\C#\CSharp\TP3\TP3\bin\Debug\TP3.exe.config
+D:\ECE\ing4\C#\CSharp\TP3\TP3\bin\Debug\TP3.exe
+D:\ECE\ing4\C#\CSharp\TP3\TP3\bin\Debug\TP3.pdb
+D:\ECE\ing4\C#\CSharp\TP3\TP3\obj\Debug\TP3.csprojAssemblyReference.cache
+D:\ECE\ing4\C#\CSharp\TP3\TP3\obj\Debug\MainWindow.g.cs
+D:\ECE\ing4\C#\CSharp\TP3\TP3\obj\Debug\App.g.cs
+D:\ECE\ing4\C#\CSharp\TP3\TP3\obj\Debug\TP3_MarkupCompile.cache
+D:\ECE\ing4\C#\CSharp\TP3\TP3\obj\Debug\TP3_MarkupCompile.lref
+D:\ECE\ing4\C#\CSharp\TP3\TP3\obj\Debug\MainWindow.baml
+D:\ECE\ing4\C#\CSharp\TP3\TP3\obj\Debug\TP3.g.resources
+D:\ECE\ing4\C#\CSharp\TP3\TP3\obj\Debug\TP3.Properties.Resources.resources
+D:\ECE\ing4\C#\CSharp\TP3\TP3\obj\Debug\TP3.csproj.GenerateResource.cache
+D:\ECE\ing4\C#\CSharp\TP3\TP3\obj\Debug\TP3.exe
+D:\ECE\ing4\C#\CSharp\TP3\TP3\obj\Debug\TP3.pdb

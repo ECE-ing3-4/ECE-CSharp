@@ -1,0 +1,16 @@
+D:\Programmation\C#\Source\Repos\TP1\test1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\Programmation\C#\Source\Repos\TP1\test1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\Programmation\C#\Source\Repos\TP1\test1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\Programmation\C#\Source\Repos\TP1\test1\bin\Debug\test1.dll
+D:\Programmation\C#\Source\Repos\TP1\test1\bin\Debug\test1.pdb
+D:\Programmation\C#\Source\Repos\TP1\test1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\Programmation\C#\Source\Repos\TP1\test1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\Programmation\C#\Source\Repos\TP1\test1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\Programmation\C#\Source\Repos\TP1\test1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\Programmation\C#\Source\Repos\TP1\test1\obj\Debug\test1.csprojAssemblyReference.cache
+D:\Programmation\C#\Source\Repos\TP1\test1\obj\Debug\test1.csproj.CopyComplete
+D:\Programmation\C#\Source\Repos\TP1\test1\obj\Debug\test1.dll
+D:\Programmation\C#\Source\Repos\TP1\test1\obj\Debug\test1.pdb
+D:\Programmation\C#\Source\Repos\TP1\test1\bin\Debug\TP1.exe
+D:\Programmation\C#\Source\Repos\TP1\test1\bin\Debug\TP1.pdb
+D:\Programmation\C#\Source\Repos\TP1\test1\bin\Debug\TP1.exe.config

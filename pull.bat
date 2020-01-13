@@ -1,4 +1,4 @@
 @echo off
 git branch -a
-git pull
+git pull origin
 pause

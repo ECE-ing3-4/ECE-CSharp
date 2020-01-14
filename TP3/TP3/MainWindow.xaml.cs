@@ -13,7 +13,8 @@ namespace TP3
 
         private void ComboBox1_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-
+            string pays = (ComboBox1.SelectedItem.ToString()).Split(' ')[1];
+            Label1.Content = pays;
         }
     }
 }

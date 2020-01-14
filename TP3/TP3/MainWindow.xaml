@@ -8,6 +8,6 @@
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
         <ComboBox x:Name="ComboBox1" ItemsSource="{Binding cbItems}" SelectedItem="{Binding Path=SelectedItem}"   HorizontalAlignment="Left" Margin="82,76,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" SelectionChanged="ComboBox1_SelectionChanged"/>
-        <Label x:Name="Label1" Grid.ColumnSpan="2" Content="Label" HorizontalAlignment="Left" Margin="514,143,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Label1" Content="Label" HorizontalAlignment="Left" Margin="514,143,0,0" VerticalAlignment="Top"/>
     </StackPanel>
 </Window>

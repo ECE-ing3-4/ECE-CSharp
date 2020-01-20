@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
 
 namespace Projet
 {
@@ -29,8 +30,15 @@ namespace Projet
 
             const string url = "https://fr.openfoodfacts.org/categorie/pains.json";
             var json = new WebClient().DownloadString(url);
-            Label1.Content = json;
-
+            dynamic magic = JsonConvert.DeserializeObject(json);
+            string name;
+            for (int i = 0; i < 20; i++)
+            {
+                name = magic["products"][i]["generic_name"];
+                _ = MessageBox.Show(name);
+                //Label1.Content = magic["products"][i]["generic_name"];
+            }
+            
         }
     }
 }

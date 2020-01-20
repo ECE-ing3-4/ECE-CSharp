@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Text;
@@ -10,17 +11,32 @@ namespace TP3
     {
         public static ComboBoxItem SelectedcbItem { get; set; }
         public static ObservableCollection<ComboBoxItem> cbItems { get; set; }
+
+        static List<string> pays = new List<string>();
+        static List<string> capitales = new List<string>();
         public VM()
         {
 
         }
 
+        public static string trouveCapitale(string paysCible)
+        {
+            for (int i = 0; i < pays.Count; i++)
+            {
+                if (pays[i]== paysCible)
+                {
+                    return capitales[i];
+                }
+            }
+            return "Error";
+        }
+
         public static void run()
         {
             cbItems = new ObservableCollection<ComboBoxItem>();
-            var cbItem = new ComboBoxItem { Content = "<--Pays-->" };
-            SelectedcbItem = cbItem;
-            cbItems.Add(cbItem);
+            //var cbItem = new ComboBoxItem { Content = "<--Pays-->" };
+            //SelectedcbItem = cbItem;
+            //cbItems.Add(cbItem);
 
             string[] tokens;
             char[] separators = { ',' };
@@ -34,7 +50,9 @@ namespace TP3
                 tokens = str.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 
                 cbItems.Add(new ComboBoxItem { Content = tokens[0] });
-
+                pays.Add(tokens[0]);
+                capitales.Add(tokens[1]);
+                
             }
         }
         

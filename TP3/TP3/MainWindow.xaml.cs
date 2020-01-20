@@ -4,6 +4,7 @@ namespace TP3
 {
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -14,7 +15,8 @@ namespace TP3
         private void ComboBox1_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             string pays = (ComboBox1.SelectedItem.ToString()).Split(' ')[1];
-            Label1.Content = pays;
+            string capitale = VM.trouveCapitale(pays);
+            Label1.Content = capitale;
         }
     }
 }

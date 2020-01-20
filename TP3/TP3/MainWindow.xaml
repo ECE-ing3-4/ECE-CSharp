@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TP3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <StackPanel>
-        <ComboBox x:Name="ComboBox1" ItemsSource="{Binding cbItems}" SelectedItem="{Binding Path=SelectedItem}"   HorizontalAlignment="Left" Margin="82,76,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" SelectionChanged="ComboBox1_SelectionChanged"/>
-        <Label x:Name="Label1" Content="Label" HorizontalAlignment="Left" Margin="514,143,0,0" VerticalAlignment="Top"/>
+        Title="MainWindow" Height="490.8" Width="815.6">
+    <StackPanel Margin="0,0,3.6,2.6">
+        <ComboBox x:Name="ComboBox1" ItemsSource="{Binding cbItems}" SelectedItem="{Binding SelectedItem}"  SelectionChanged="ComboBox1_SelectionChanged"/>
+        <Label x:Name="Label1" Content="Label" />
     </StackPanel>
 </Window>

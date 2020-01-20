@@ -42,7 +42,7 @@ namespace TP3
             char[] separators = { ',' };
             string str = "";
 
-            FileStream fs = new FileStream(@"D:\ECE\ing4\C#\CSharp\TP3\Capital.csv", FileMode.Open);
+            FileStream fs = new FileStream(@"..\..\..\Capital.csv", FileMode.Open);
             StreamReader sr = new StreamReader(fs, Encoding.Default);
 
             while ((str = sr.ReadLine()) != null)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
@@ -6,23 +7,33 @@ using Newtonsoft.Json.Linq;
 
 namespace Projet
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        public List<ListBoxItem> ProductsList { get; set; }
         public MainWindow()
         {
             InitializeComponent();
-
+            ProductsList= new List<ListBoxItem>();
+            this.ListBox1.DataContext = this;
+            LoadProducts();
+        }
+        
+        private JToken getAllProducts()
+        {
             const string url = "https://fr.openfoodfacts.org/categorie/pains.json";
             var json = new WebClient().DownloadString(url);
 
-            var jObject = JObject.Parse(json);
-            JToken jtokens = jObject["products"];
+            return JObject.Parse(json);
+        }
 
-            ListBoxItem itm;
-            
+        private void LoadProducts()
+        {
+
+            JToken jtokens = getAllProducts()["products"];
+
+            ListBoxItem product;
+
+
             foreach (JToken jtoken in jtokens)
             {
                 string name = (string)jtoken["generic_name"];
@@ -30,22 +41,11 @@ namespace Projet
 
                 if (!String.IsNullOrEmpty(name))
                 {
-                    itm = new ListBoxItem();
-                    itm.Content = name + " : " + quantity;
-                    ListBox1.Items.Add(itm);
+                    product = new ListBoxItem();
+                    product.Content = name + " : " + quantity;
+                    ProductsList.Add(product);
                 }
             }
-
-            /*
-            dynamic magic = JsonConvert.DeserializeObject(json);
-            string name;
-            for (int i = 0; i < 20; i++)
-            {
-                name = magic["products"][i]["generic_name"];
-                _ = MessageBox.Show(name);
-                //Label1.Content = magic["products"][i]["generic_name"];
-            }
-            */
         }
     }
 }

@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Label x:Name="Label1" Content="Label" HorizontalAlignment="Left" Margin="60,67,0,0" VerticalAlignment="Top" Height="100" Width="170"/>
-        <ListBox x:Name="ListBox1" HorizontalAlignment="Left" Height="257" Margin="286,67,0,0" VerticalAlignment="Top" Width="364"/>
+        <ListBox x:Name="ListBox1" ItemsSource="{Binding ProductsList}" HorizontalAlignment="Left" Height="257" Margin="286,67,0,0" VerticalAlignment="Top" Width="364"/>
 
     </Grid>
 </Window>

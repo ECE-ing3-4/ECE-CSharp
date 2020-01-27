@@ -36,13 +36,17 @@ namespace Projet
 
             foreach (JToken jtoken in jtokens)
             {
-                string name = (string)jtoken["generic_name"];
+                string picture = (string)jtoken["image_front_thumb_url"];
+                /*string name = (string)jtoken["generic_name"];
                 string quantity = (string)jtoken["quantity"];
+                string brands = (string)jtoken["brands"];
 
-                if (!String.IsNullOrEmpty(name))
+                if (!String.IsNullOrEmpty(name))*/
                 {
+                  
                     product = new ListBoxItem();
-                    product.Content = name + " : " + quantity;
+                    // product.Content = name + " : " + quantity + " : " + brands;
+                    product.Source= picture;
                     ProductsList.Add(product);
                 }
             }

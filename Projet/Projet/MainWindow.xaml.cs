@@ -9,6 +9,8 @@ namespace Projet
 {
     public partial class MainWindow : Window
     {
+        private object pictureBox;
+
         public List<ListBoxItem> ProductsList { get; set; }
         public MainWindow()
         {
@@ -17,7 +19,28 @@ namespace Projet
             this.ListBox1.DataContext = this;
             LoadProducts();
         }
-        
+
+        private void Exception()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        private void OpenImage(string url)
+        {
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+            try
+            {
+                HttpWebResponse response = (HttpWebResponse)req.GetResponse();
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    pictureBox.Image = new Bitmap(response.GetResponseStream);
+                }
+            }
+            catch Exception(){ }
+            }
+        }
+
         private JToken getAllProducts()
         {
             const string url = "https://fr.openfoodfacts.org/categorie/pains.json";
@@ -52,4 +75,6 @@ namespace Projet
             }
         }
     }
-}
+
+       
+    }

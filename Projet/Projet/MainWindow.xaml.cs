@@ -13,11 +13,8 @@ namespace Projet
         public MainWindow()
         {
             InitializeComponent();
-            ProductsList= new List<ListBoxItem>();
-            this.ListBox1.DataContext = this;
-            LoadProducts();
         }
-        
+
         private JToken getAllProducts()
         {
             const string url = "https://fr.openfoodfacts.org/categorie/pains.json";
@@ -46,6 +43,15 @@ namespace Projet
                     ProductsList.Add(product);
                 }
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            ProductsList = new List<ListBoxItem>();
+            this.ListBox1.DataContext = this;
+            LoadProducts();
+
         }
     }
 }

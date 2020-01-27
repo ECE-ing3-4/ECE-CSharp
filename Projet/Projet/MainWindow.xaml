@@ -7,8 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label x:Name="Label1" Content="Label" HorizontalAlignment="Left" Margin="60,67,0,0" VerticalAlignment="Top" Height="100" Width="170"/>
         <ListBox x:Name="ListBox1" ItemsSource="{Binding ProductsList}" HorizontalAlignment="Left" Height="257" Margin="286,67,0,0" VerticalAlignment="Top" Width="364"/>
+        <Button Content="Tout charger" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="200" Click="Button_Click" Height="23"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="Code barre" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Charger" HorizontalAlignment="Left" Margin="135,38,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Charger" HorizontalAlignment="Left" Margin="135,67,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="30,159,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>

@@ -9,7 +9,7 @@
     <Grid>
         <ListBox x:Name="ListBox1" ItemsSource="{Binding ProductsList}" HorizontalAlignment="Left" Height="257" Margin="286,67,0,0" VerticalAlignment="Top" Width="364"/>
         <Button x:Name="GetAll" Content="Tout charger" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="200" Click="GetAll_Click" Height="23"/>
-        <TextBox x:Name="Barcode" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="Code barre" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Barcode" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="3124480182708" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="GetBarCode" Content="Charger" HorizontalAlignment="Left" Margin="135,38,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="GetBarCode_Click"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="GetDesc" Content="Charger" HorizontalAlignment="Left" Margin="135,67,0,0" VerticalAlignment="Top" Width="75" Height="23"/>

@@ -9,13 +9,43 @@ namespace Projet
 {
     public partial class MainWindow : Window
     {
+        private object pictureBox;
+
         public List<ListBoxItem> ProductsList { get; set; }
         public MainWindow()
         {
             InitializeComponent();
         }
 
+<<<<<<< HEAD
         private JToken getProducts(string url)
+=======
+<<<<<<< HEAD
+        private void Exception()
+        {
+            throw new NotImplementedException();
+        }
+
+
+        private void OpenImage(string url)
+        {
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+            try
+            {
+                HttpWebResponse response = (HttpWebResponse)req.GetResponse();
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    pictureBox.Image = new Bitmap(response.GetResponseStream);
+                }
+            }
+            catch Exception(){ }
+            }
+        }
+
+=======
+>>>>>>> b5f7770811848073e0c759a9e0dcdf94dc77af48
+        private JToken getAllProducts()
+>>>>>>> 69018c47df677e01a3d65e607074dade1279a484
         {
             var json = new WebClient().DownloadString(url);
 
@@ -72,4 +102,6 @@ namespace Projet
                 MessageBox.Show("The Barcode is unvalid");
         }
     }
-}
+
+       
+    }

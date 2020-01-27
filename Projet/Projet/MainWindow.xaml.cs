@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
@@ -49,13 +50,9 @@ namespace Projet
             return getProducts(url);
         }
 
-        private void LoadProducts()
+        private void putInTheList(JToken jtokens)
         {
-
-            JToken jtokens = getAllProducts()["products"];
-
             ListBoxItem product;
-
 
             foreach (JToken jtoken in jtokens)
             {
@@ -66,7 +63,7 @@ namespace Projet
 
                 if (!String.IsNullOrEmpty(name))
                 {
-                  
+
                     product = new ListBoxItem();
                     product.Content = name + " : " + quantity + " : " + brands;
                     //product.Source= picture;
@@ -75,12 +72,18 @@ namespace Projet
             }
         }
 
+        private void loadAllProducts()
+        {
+            JToken jtokens = getAllProducts()["products"];
+            putInTheList(jtokens);
+        }
+
         private void GetAll_Click(object sender, RoutedEventArgs e)
         {
 
             ProductsList = new List<ListBoxItem>();
             this.ListBox1.DataContext = this;
-            LoadProducts();
+            loadAllProducts();
 
         }
 
@@ -88,8 +91,14 @@ namespace Projet
         {
             string code = Barcode.Text;
             string url = "https://ssl-api.openfoodfacts.org/api/v0/product/"+code;
-            if (Int32.TryParse(code,out int c))
-                MessageBox.Show(code);
+            JToken result;
+
+            if (code.All(char.IsDigit))
+            {
+                result = getProducts(url);
+                MessageBox.Show(result.ToString());
+                //putInTheList(result);
+            }
             else
                 MessageBox.Show("The Barcode is unvalid");
         }

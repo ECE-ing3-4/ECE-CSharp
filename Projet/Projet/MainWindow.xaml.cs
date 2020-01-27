@@ -17,16 +17,11 @@ namespace Projet
             InitializeComponent();
         }
 
-<<<<<<< HEAD
-        private JToken getProducts(string url)
-=======
-<<<<<<< HEAD
         private void Exception()
         {
             throw new NotImplementedException();
         }
-
-
+        /*
         private void OpenImage(string url)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
@@ -40,12 +35,9 @@ namespace Projet
             }
             catch Exception(){ }
             }
-        }
+        }*/
 
-=======
->>>>>>> b5f7770811848073e0c759a9e0dcdf94dc77af48
-        private JToken getAllProducts()
->>>>>>> 69018c47df677e01a3d65e607074dade1279a484
+        private JToken getProducts(string url)
         {
             var json = new WebClient().DownloadString(url);
 

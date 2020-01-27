@@ -15,12 +15,16 @@ namespace Projet
             InitializeComponent();
         }
 
-        private JToken getAllProducts()
+        private JToken getProducts(string url)
         {
-            const string url = "https://fr.openfoodfacts.org/categorie/pains.json";
             var json = new WebClient().DownloadString(url);
 
             return JObject.Parse(json);
+        }
+        private JToken getAllProducts()
+        {
+            const string url = "https://fr.openfoodfacts.org/categorie/pains.json";
+            return getProducts(url);
         }
 
         private void LoadProducts()
@@ -33,29 +37,39 @@ namespace Projet
 
             foreach (JToken jtoken in jtokens)
             {
-                string picture = (string)jtoken["image_front_thumb_url"];
-                /*string name = (string)jtoken["generic_name"];
+                //string picture = (string)jtoken["image_front_thumb_url"];
+                string name = (string)jtoken["generic_name"];
                 string quantity = (string)jtoken["quantity"];
                 string brands = (string)jtoken["brands"];
 
-                if (!String.IsNullOrEmpty(name))*/
+                if (!String.IsNullOrEmpty(name))
                 {
                   
                     product = new ListBoxItem();
-                    // product.Content = name + " : " + quantity + " : " + brands;
-                    product.Source= picture;
+                    product.Content = name + " : " + quantity + " : " + brands;
+                    //product.Source= picture;
                     ProductsList.Add(product);
                 }
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void GetAll_Click(object sender, RoutedEventArgs e)
         {
 
             ProductsList = new List<ListBoxItem>();
             this.ListBox1.DataContext = this;
             LoadProducts();
 
+        }
+
+        private void GetBarCode_Click(object sender, RoutedEventArgs e)
+        {
+            string code = Barcode.Text;
+            string url = "https://ssl-api.openfoodfacts.org/api/v0/product/"+code;
+            if (Int32.TryParse(code,out int c))
+                MessageBox.Show(code);
+            else
+                MessageBox.Show("The Barcode is unvalid");
         }
     }
 }

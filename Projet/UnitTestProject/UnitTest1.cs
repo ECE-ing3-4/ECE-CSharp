@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json.Linq;
 using Projet;
 
-namespace UnitTests
+namespace UnitTestProject
 {
     [TestClass]
     public class UnitTest1

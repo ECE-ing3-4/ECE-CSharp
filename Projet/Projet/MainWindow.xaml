@@ -7,11 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="ListBox1" ItemsSource="{Binding ProductsList}" HorizontalAlignment="Left" Height="257" Margin="286,67,0,0" VerticalAlignment="Top" Width="364">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="{Binding ProductsList}" Height="30"></Image>
-                <TextBlock Text="{Binding ProductsList}"></TextBlock>
-            </StackPanel>
+        <ListBox x:Name="ListBox1" 
+                 ItemsSource="{Binding ProductsList}" 
+                 HorizontalAlignment="Left" 
+                 Height="257" 
+                 Margin="286,67,0,0" 
+                 VerticalAlignment="Top" 
+                 Width="364">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image 
+                                Width="50"
+                                Margin="2"
+                                Source="{Binding image_thumb_url}"/>
+                        <TextBlock Text="{Binding ProductsList}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
         <Button x:Name="GetAll" Content="Tout charger" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="200" Click="GetAll_Click" Height="23"/>
         <TextBox x:Name="Barcode" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="3124480182708" VerticalAlignment="Top" Width="120"/>

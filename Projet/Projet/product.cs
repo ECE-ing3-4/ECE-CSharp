@@ -2,8 +2,8 @@
 {
     public class Product
     {
-        public int Picture { get; set; }
-        public string Name { get; set; }
-        public string Quantity { get; set; }
+        public int picture_url { get; set; }
+        public string name { get; set; }
+        //public string Quantity { get; set; }
     }
 }

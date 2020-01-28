@@ -10,7 +10,7 @@ namespace Projet
 {
     public partial class MainWindow : Window
     {
-        private object pictureBox;
+        //private object pictureBox;
 
         public List<ListBoxItem> ProductsList { get; set; }
         public MainWindow()
@@ -38,7 +38,7 @@ namespace Projet
             }
         }*/
 
-        private JToken getProducts(string url)
+        public JToken getProducts(string url)
         {
             var json = new WebClient().DownloadString(url);
 
@@ -56,7 +56,7 @@ namespace Projet
 
             foreach (JToken jtoken in jtokens)
             {
-                MessageBox.Show(jtoken.ToString());
+                //MessageBox.Show(jtoken.ToString());
                 //string picture = (string)jtoken["image_front_thumb_url"];
                 string name = (string)jtoken["product_name"];
                 string quantity = (string)jtoken["quantity"];
@@ -76,8 +76,10 @@ namespace Projet
         private void putOneInTheList(JToken jtoken)
         {
             ListBoxItem product;
-            
-            MessageBox.Show(jtoken.ToString());
+
+            //MessageBox.Show("hey");
+            jtoken = jtoken["product"];
+            //MessageBox.Show(jtoken.ToString());
             //string picture = (string)jtoken["image_front_thumb_url"];
             string name = (string)jtoken["product_name"];
             string quantity = (string)jtoken["quantity"];
@@ -88,7 +90,8 @@ namespace Projet
 
                 product = new ListBoxItem();
                 product.Content = name + " : " + quantity + " : " + brands;
-                //product.Source= picture;
+                MessageBox.Show(name + " : " + quantity + " : " + brands);
+                MessageBox.Show(ProductsList.Count.ToString());
                 ProductsList.Add(product);
             }
         }
@@ -105,11 +108,12 @@ namespace Projet
             ProductsList = new List<ListBoxItem>();
             this.ListBox1.DataContext = this;
             loadAllProducts();
-
+            MessageBox.Show("nfekm");
         }
 
         private void GetBarCode_Click(object sender, RoutedEventArgs e)
         {
+            ProductsList = new List<ListBoxItem>();
             string code = Barcode.Text;
             string url = "https://ssl-api.openfoodfacts.org/api/v0/product/"+code;
             string status;

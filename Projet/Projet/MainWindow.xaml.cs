@@ -90,8 +90,8 @@ namespace Projet
 
                 product = new ListBoxItem();
                 product.Content = name + " : " + quantity + " : " + brands;
-                MessageBox.Show(name + " : " + quantity + " : " + brands);
-                MessageBox.Show(ProductsList.Count.ToString());
+                //MessageBox.Show(name + " : " + quantity + " : " + brands);
+                //MessageBox.Show(ProductsList.Count.ToString());
                 ProductsList.Add(product);
             }
         }
@@ -108,7 +108,7 @@ namespace Projet
             ProductsList = new List<ListBoxItem>();
             this.ListBox1.DataContext = this;
             loadAllProducts();
-            MessageBox.Show("nfekm");
+            //MessageBox.Show("nfekm");
         }
 
         private void GetBarCode_Click(object sender, RoutedEventArgs e)

@@ -17,7 +17,7 @@ namespace UnitTestProject
             const string url = "https://ssl-api.openfoodfacts.org/api/v0/product/3124480182708";
             JToken tok = a.getProducts(url);
             tok = tok["product"]["product_name"];
-            MessageBox.Show((string)tok);
+            //MessageBox.Show((string)tok);
             string name = (string)tok;
 
             Assert.Equals("Tropical", name);

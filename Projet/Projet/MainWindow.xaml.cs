@@ -76,7 +76,6 @@ namespace Projet
         private void putOneInTheList(JToken jtoken)
         {
             ListBoxItem product;
-
             //MessageBox.Show("hey");
             jtoken = jtoken["product"];
             //MessageBox.Show(jtoken.ToString());
@@ -93,6 +92,7 @@ namespace Projet
                 MessageBox.Show(name + " : " + quantity + " : " + brands);
                 MessageBox.Show(ProductsList.Count.ToString());
                 ProductsList.Add(product);
+                MessageBox.Show(ProductsList.Count.ToString());
             }
         }
 
@@ -108,7 +108,6 @@ namespace Projet
             ProductsList = new List<ListBoxItem>();
             this.ListBox1.DataContext = this;
             loadAllProducts();
-            MessageBox.Show("nfekm");
         }
 
         private void GetBarCode_Click(object sender, RoutedEventArgs e)
@@ -135,6 +134,16 @@ namespace Projet
             }
             else
                 MessageBox.Show("The Barcode is unvalid");
+
+            this.ListBox1.DataContext = this;
+        }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            ProductsList.Clear();
+            ProductsList = new List<ListBoxItem>();
+
+            this.ListBox1.DataContext = this;
         }
     }
 

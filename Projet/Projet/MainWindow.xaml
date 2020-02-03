@@ -20,7 +20,7 @@
                         <Image 
                                 Width="50"
                                 Margin="2"
-                                Source="{Binding image_thumb_url}"/>
+                                Source="logo_psg.jpg"/>
                         <TextBlock Text="{Binding ProductsList}"></TextBlock>
                     </StackPanel>
                 </DataTemplate>

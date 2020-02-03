@@ -139,11 +139,11 @@ namespace Projet
         }
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
-        {
+        {  
             ProductsList.Clear();
-            ProductsList = new List<ListBoxItem>();
+            //ProductsList = new List<ListBoxItem>();
 
-            this.ListBox1.DataContext = this;
+            this.ListBox1.ItemsSource = ProductsList;
         }
     }
 

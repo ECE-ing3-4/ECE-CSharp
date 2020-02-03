@@ -14,14 +14,26 @@
                  Margin="286,67,0,0" 
                  VerticalAlignment="Top" 
                  Width="364">
+            
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <Image 
                                 Width="50"
                                 Margin="2"
-                                Source="logo_psg.jpg"/>
-                        <TextBlock Text="{Binding ProductsList}"></TextBlock>
+                                Source="D:\ECE\ing4\C#\CSharp\smiley.png"/>
+                        <TextBlock Text="{Binding Name}"
+                                               TextWrapping="Wrap"
+                                               Width="125"        
+                                               Foreground="#2c3e50"
+                                               FontWeight="Bold"
+                                               Margin="2" />
+                        <TextBlock Text="{Binding Brand}"
+                                               TextWrapping="Wrap"
+                                               Width="125"        
+                                               Foreground="#2c3e50"
+                                               FontWeight="Bold"
+                                               Margin="2" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

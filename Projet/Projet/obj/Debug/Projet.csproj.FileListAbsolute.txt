@@ -48,3 +48,5 @@ D:\Documents\ECE\ing4\C#\CSharp\Projet\Projet\obj\Debug\Projet.csproj.GenerateRe
 D:\Documents\ECE\ing4\C#\CSharp\Projet\Projet\obj\Debug\Projet.csproj.CopyComplete
 D:\Documents\ECE\ing4\C#\CSharp\Projet\Projet\bin\Debug\itextsharp.dll
 D:\Documents\ECE\ing4\C#\CSharp\Projet\Projet\bin\Debug\itextsharp.xml
+D:\ECE\ing4\C#\CSharp\Projet\Projet\bin\Debug\itextsharp.dll
+D:\ECE\ing4\C#\CSharp\Projet\Projet\bin\Debug\itextsharp.xml

@@ -13,7 +13,7 @@ namespace Projet
     {
         //private object pictureBox;
 
-        public List<ListBoxItem> ProductsList { get; set; }
+        public List<Product> ProductsList { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -53,11 +53,12 @@ namespace Projet
 
         private void putInTheList(JToken jtokens)
         {
-            ListBoxItem product;
+            //ListBoxItem product;
             Product prod1 = new Product();
 
             foreach (JToken jtoken in jtokens)
             {
+                prod1 = new Product();
                 //MessageBox.Show(jtoken.ToString());
                 //string picture = (string)jtoken["image_front_thumb_url"];
                 prod1.Name = (string)jtoken["product_name"];
@@ -67,14 +68,10 @@ namespace Projet
                 if (!String.IsNullOrEmpty(prod1.Name))
                 {
 
-                    product = new ListBoxItem();
-                    product.Content = prod1.Name + " : " + prod1.Quantity + " : " + prod1.Brand;
-<<<<<<< HEAD
+                    //product = new ListBoxItem();
+                    //product.Content = prod1.Name + " : " + prod1.Quantity + " : " + prod1.Brand;
                     //product.Source= picture;
-=======
-                    //product.Content = ;
->>>>>>> 63936242fde2b714fcb3aab1e7a8747f9377679b
-                    ProductsList.Add(product);
+                    ProductsList.Add(prod1);
                 }
             }
         }
@@ -82,15 +79,8 @@ namespace Projet
         private void putOneInTheList(JToken jtoken)
         {
             ListBoxItem product;
-<<<<<<< HEAD
-<<<<<<< HEAD
             Product prod1 = new Product();
-            
-=======
->>>>>>> 3dd2b3fa6aa9b2854d3392a75010d2783cfaed08
-=======
-            Product prod1 = new Product();
->>>>>>> 63936242fde2b714fcb3aab1e7a8747f9377679b
+
             //MessageBox.Show("hey");
             //MessageBox.Show(jtoken.ToString());
             //string picture = (string)jtoken["image_front_thumb_url"];
@@ -109,7 +99,7 @@ namespace Projet
                 product.Content = prod1.Name + " : " + prod1.Quantity + " : " + prod1.Brand;
                 MessageBox.Show(prod1.Name + " : " + prod1.Quantity + " : " + prod1.Brand);
                 MessageBox.Show(ProductsList.Count.ToString());
-                ProductsList.Add(product);
+                ProductsList.Add(prod1);
                 MessageBox.Show(ProductsList.Count.ToString());
             }
         }
@@ -123,14 +113,14 @@ namespace Projet
         private void GetAll_Click(object sender, RoutedEventArgs e)
         {
 
-            ProductsList = new List<ListBoxItem>();
+            ProductsList = new List<Product>();
             this.ListBox1.DataContext = this;
             loadAllProducts();
         }
 
         private void GetBarCode_Click(object sender, RoutedEventArgs e)
         {
-            ProductsList = new List<ListBoxItem>();
+            ProductsList = new List<Product>();
             string code = Barcode.Text;
             string url = "https://ssl-api.openfoodfacts.org/api/v0/product/"+code;
             string status;

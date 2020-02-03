@@ -22,18 +22,39 @@
                                 Width="50"
                                 Margin="2"
                                 Source="{Binding Picture_url}"/>
-                        <TextBlock Text="{Binding Name}"
-                                               TextWrapping="Wrap"
-                                               Width="125"        
-                                               Foreground="#2c3e50"
-                                               FontWeight="Bold"
-                                               Margin="2" />
-                        <TextBlock Text="{Binding Brand}"
-                                               TextWrapping="Wrap"
-                                               Width="125"        
-                                               Foreground="#2c3e50"
-                                               FontWeight="Bold"
-                                               Margin="2" />
+
+                        <StackPanel Orientation="Vertical" Width="250">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Name}"
+                                        TextWrapping="Wrap"
+                                        FontWeight="Bold"
+                                        Margin="2"  />
+                                <TextBlock Text=" : " 
+                                            Margin="2" />
+                                <TextBlock Text="{Binding Nutriscore}"
+                                            TextWrapping="Wrap"
+                                            Margin="2" />
+                            </StackPanel>
+
+                            
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Brands:" 
+                                            Margin="2" />
+                                <TextBlock Text="{Binding Brand}"
+                                            TextWrapping="Wrap"
+                                            Margin="2" />
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Quantity in one unit:" 
+                                            Margin="2" />
+                                <TextBlock Text="{Binding Quantity}"
+                                            TextWrapping="Wrap"
+                                            Margin="2" />
+                            </StackPanel>
+
+                        </StackPanel>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

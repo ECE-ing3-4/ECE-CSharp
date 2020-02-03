@@ -7,5 +7,7 @@ namespace Projet
         public string Picture_url { get; set; }
         public string Quantity { get; set; }
         public string Brand { get; set; }
+        public string Nutriscore { get; set; }
+        
     }
 }

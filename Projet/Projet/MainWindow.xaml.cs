@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -13,7 +14,7 @@ namespace Projet
     {
         //private object pictureBox;
 
-        public List<Product> ProductsList { get; set; }
+        public ObservableCollection<Product> ProductsList { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -65,6 +66,7 @@ namespace Projet
                 prod1.Quantity = (string)jtoken["quantity"];
                 prod1.Brand = (string)jtoken["brands"];
                 prod1.Picture_url = (string)jtoken["image_thumb_url"];
+                prod1.Nutriscore = (string)jtoken["nutriscore_grade"]; 
 
                 if (!String.IsNullOrEmpty(prod1.Name))
                 {
@@ -89,6 +91,7 @@ namespace Projet
             prod1.Quantity = (string)jtoken["product"]["quantity"];
             prod1.Brand = (string)jtoken["product"]["brands"];
             prod1.Picture_url = (string)jtoken["product"]["image_thumb_url"];
+            prod1.Nutriscore = (string)jtoken["product"]["nutriscore_grade"];
             //test1.Picture_url = 
             //string name = (string)jtoken["product_name"];
             //string quantity = (string)jtoken["quantity"];
@@ -117,14 +120,14 @@ namespace Projet
         private void GetAll_Click(object sender, RoutedEventArgs e)
         {
 
-            ProductsList = new List<Product>();
-            this.ListBox1.DataContext = this;
+            ProductsList = new ObservableCollection<Product>();
             loadAllProducts();
+            this.ListBox1.ItemsSource = ProductsList;
         }
 
         private void GetBarCode_Click(object sender, RoutedEventArgs e)
         {
-            ProductsList = new List<Product>();
+            ProductsList = new ObservableCollection<Product>();
             string code = Barcode.Text;
             string url = "https://ssl-api.openfoodfacts.org/api/v0/product/"+code;
             string status;
@@ -147,13 +150,13 @@ namespace Projet
             else
                 MessageBox.Show("The Barcode is unvalid");
 
-            this.ListBox1.DataContext = this;
+            this.ListBox1.ItemsSource = ProductsList;
         }
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {  
-            ProductsList.Clear();
-            //ProductsList = new List<ListBoxItem>();
+            //ProductsList.Clear();
+            ProductsList = new ObservableCollection<Product>();
 
             this.ListBox1.ItemsSource = ProductsList;
         }

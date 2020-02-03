@@ -64,6 +64,7 @@ namespace Projet
                 prod1.Name = (string)jtoken["product_name"];
                 prod1.Quantity = (string)jtoken["quantity"];
                 prod1.Brand = (string)jtoken["brands"];
+                prod1.Picture_url = (string)jtoken["image_thumb_url"];
 
                 if (!String.IsNullOrEmpty(prod1.Name))
                 {
@@ -78,29 +79,32 @@ namespace Projet
 
         private void putOneInTheList(JToken jtoken)
         {
-            ListBoxItem product;
+            //ListBoxItem product;
             Product prod1 = new Product();
 
             //MessageBox.Show("hey");
             //MessageBox.Show(jtoken.ToString());
             //string picture = (string)jtoken["image_front_thumb_url"];
-            prod1.Name = (string)jtoken["product_name"];
-            prod1.Quantity = (string)jtoken["quantity"];
-            prod1.Brand = (string)jtoken["brands"];
+            prod1.Name = (string)jtoken["product"]["product_name"];
+            prod1.Quantity = (string)jtoken["product"]["quantity"];
+            prod1.Brand = (string)jtoken["product"]["brands"];
+            prod1.Picture_url = (string)jtoken["product"]["image_thumb_url"];
             //test1.Picture_url = 
             //string name = (string)jtoken["product_name"];
             //string quantity = (string)jtoken["quantity"];
             //string brands = (string)jtoken["brands"];
+            //MessageBox.Show((string)jtoken["product_name"]);
+            //MessageBox.Show(prod1.Name);
 
             if (!String.IsNullOrEmpty(prod1.Name))
             {
 
-                product = new ListBoxItem();
-                product.Content = prod1.Name + " : " + prod1.Quantity + " : " + prod1.Brand;
-                MessageBox.Show(prod1.Name + " : " + prod1.Quantity + " : " + prod1.Brand);
-                MessageBox.Show(ProductsList.Count.ToString());
+                //product = new ListBoxItem();
+                //product.Content = prod1.Name + " : " + prod1.Quantity + " : " + prod1.Brand;
+                //MessageBox.Show(prod1.Name + " : " + prod1.Quantity + " : " + prod1.Brand);
+                //MessageBox.Show(ProductsList.Count.ToString());
                 ProductsList.Add(prod1);
-                MessageBox.Show(ProductsList.Count.ToString());
+                //MessageBox.Show(ProductsList.Count.ToString());
             }
         }
 

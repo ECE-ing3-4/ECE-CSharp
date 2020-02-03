@@ -21,7 +21,7 @@
                         <Image 
                                 Width="50"
                                 Margin="2"
-                                Source="D:\ECE\ing4\C#\CSharp\smiley.png"/>
+                                Source="{Binding Picture_url}"/>
                         <TextBlock Text="{Binding Name}"
                                                TextWrapping="Wrap"
                                                Width="125"        

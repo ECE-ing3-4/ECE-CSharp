@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
+using iTextSharp.text.pdf;
 using Newtonsoft.Json.Linq;
 
 namespace Projet
@@ -53,20 +54,21 @@ namespace Projet
         private void putInTheList(JToken jtokens)
         {
             ListBoxItem product;
+            Product prod1 = new Product();
 
             foreach (JToken jtoken in jtokens)
             {
                 //MessageBox.Show(jtoken.ToString());
                 //string picture = (string)jtoken["image_front_thumb_url"];
-                string name = (string)jtoken["product_name"];
-                string quantity = (string)jtoken["quantity"];
-                string brands = (string)jtoken["brands"];
+                prod1.Name = (string)jtoken["product_name"];
+                prod1.Quantity = (string)jtoken["quantity"];
+                prod1.Brand = (string)jtoken["brands"];
 
-                if (!String.IsNullOrEmpty(name))
+                if (!String.IsNullOrEmpty(prod1.Name))
                 {
 
                     product = new ListBoxItem();
-                    product.Content = name + " : " + quantity + " : " + brands;
+                    product.Content = prod1.Name + " : " + prod1.Quantity + " : " + prod1.Brand;
                     //product.Source= picture;
                     ProductsList.Add(product);
                 }
@@ -76,21 +78,25 @@ namespace Projet
         private void putOneInTheList(JToken jtoken)
         {
             ListBoxItem product;
-
+            Product prod1 = new Product();
+            
             //MessageBox.Show("hey");
-            jtoken = jtoken["product"];
             //MessageBox.Show(jtoken.ToString());
             //string picture = (string)jtoken["image_front_thumb_url"];
-            string name = (string)jtoken["product_name"];
-            string quantity = (string)jtoken["quantity"];
-            string brands = (string)jtoken["brands"];
+            prod1.Name = (string)jtoken["product_name"];
+            prod1.Quantity = (string)jtoken["quantity"];
+            prod1.Brand = (string)jtoken["brands"];
+            //test1.Picture_url = 
+            //string name = (string)jtoken["product_name"];
+            //string quantity = (string)jtoken["quantity"];
+            //string brands = (string)jtoken["brands"];
 
-            if (!String.IsNullOrEmpty(name))
+            if (!String.IsNullOrEmpty(prod1.Name))
             {
 
                 product = new ListBoxItem();
-                product.Content = name + " : " + quantity + " : " + brands;
-                MessageBox.Show(name + " : " + quantity + " : " + brands);
+                product.Content = prod1.Name + " : " + prod1.Quantity + " : " + prod1.Brand;
+                MessageBox.Show(prod1.Name + " : " + prod1.Quantity + " : " + prod1.Brand);
                 MessageBox.Show(ProductsList.Count.ToString());
                 ProductsList.Add(product);
             }

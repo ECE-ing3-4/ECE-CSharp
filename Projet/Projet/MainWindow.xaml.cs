@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Windows;
-using System.Windows.Controls;
-using iTextSharp.text.pdf;
 using Newtonsoft.Json.Linq;
 
 namespace Projet
@@ -91,7 +88,7 @@ namespace Projet
             prod1.Quantity = (string)jtoken["product"]["quantity"];
             prod1.Brand = (string)jtoken["product"]["brands"];
             prod1.Picture_url = (string)jtoken["product"]["image_thumb_url"];
-            prod1.Nutriscore = (string)jtoken["product"]["nutriscore_grade"];
+            prod1.Nutriscore = display_nutriscore((string)jtoken["product"]["nutriscore_grade"]);
             //test1.Picture_url = 
             //string name = (string)jtoken["product_name"];
             //string quantity = (string)jtoken["quantity"];
@@ -125,6 +122,27 @@ namespace Projet
             this.ListBox1.ItemsSource = ProductsList;
         }
 
+        public string display_nutriscore(string value)
+        {
+            value = value.ToLower();
+            switch (value)
+            {
+                case "a":
+                    return "D:/Documents/ECE/ing4/C#/CSharp/Pictures/nutrition_A.jpg";
+                case "b":
+                    return "D:/Documents/ECE/ing4/C#/CSharp/Pictures/nutrition_B.jpg";
+                case "c":
+                    return "D:/Documents/ECE/ing4/C#/CSharp/Pictures/nutrition_C.jpg";
+                case "d":
+                    return "D:/Documents/ECE/ing4/C#/CSharp/Pictures/nutrition_D.jpg";
+                case "e":
+                    return "D:/Documents/ECE/ing4/C#/CSharp/Pictures/nutrition_E.jpg";
+                default:
+                    return ("");
+
+            };
+
+        }
         private void GetBarCode_Click(object sender, RoutedEventArgs e)
         {
             ProductsList = new ObservableCollection<Product>();

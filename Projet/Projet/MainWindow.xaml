@@ -13,8 +13,9 @@
                  Height="257" 
                  Margin="286,67,0,0" 
                  VerticalAlignment="Top" 
-                 Width="364">
-            
+                 Width="364" 
+                 SelectionChanged="ListBox1_SelectionChanged">
+
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -33,12 +34,10 @@
                                             Margin="2"  />
                                 <TextBlock Text=" : " 
                                             Margin="2" />
-                                <TextBlock Text="{Binding Nutriscore}"
-                                            TextWrapping="Wrap"
-                                            Margin="2" />
+
                             </StackPanel>
 
-                            
+
 
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Brands:" 
@@ -55,8 +54,13 @@
                                             TextWrapping="Wrap"
                                             Margin="2" />
                             </StackPanel>
-
+                            
                         </StackPanel>
+                        <Image 
+                                    Width="50"
+                                    Margin="2"
+                                    HorizontalAlignment="Left"
+                                    Source="{Binding Nutriscore}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

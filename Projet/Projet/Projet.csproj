@@ -109,5 +109,8 @@
     <Resource Include="Pictures\nutrition_D.jpg" />
     <Resource Include="Pictures\nutrition_E.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\nutrition_none.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

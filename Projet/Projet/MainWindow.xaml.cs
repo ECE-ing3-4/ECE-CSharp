@@ -138,7 +138,7 @@ namespace Projet
                 case "e":
                     return "D:/Documents/ECE/ing4/C#/CSharp/Pictures/nutrition_E.jpg";
                 default:
-                    return ("");
+                    return ("D:/Documents/ECE/ing4/C#/CSharp/Pictures/nutrition_none.jpg");
 
             };
 

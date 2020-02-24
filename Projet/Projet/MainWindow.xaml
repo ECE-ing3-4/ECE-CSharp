@@ -18,7 +18,7 @@
                  Height="318" 
                  Margin="343,27.9,0,0" 
                  VerticalAlignment="Top" 
-                 Width="519" Background="#FFB4B4B4" Foreground="Black" BorderBrush="{x:Null}" Grid.Row="1" >
+                 Width="519" Background="#FFB4B4B4" Foreground="Black" BorderBrush="{x:Null}" Grid.Row="1" MouseDoubleClick="ListBox1_MouseDoubleClick" >
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -83,7 +83,8 @@
                 </LinearGradientBrush>
             </TextBox.Foreground>
         </TextBox>
-        <Button x:Name="SortButton" Content="Sort" HorizontalAlignment="Left" Margin="104,213.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="SortButton_Click"/>
+        <Button x:Name="SortButton" Content="Sort Nutri" HorizontalAlignment="Left" Margin="104,213.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="SortButton_Click"/>
+        <Button x:Name="SortButton_Name" Content="Sort Name" HorizontalAlignment="Left" Margin="200,213.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="SortButton_Name_Click"/>
 
     </Grid>
 </Window>

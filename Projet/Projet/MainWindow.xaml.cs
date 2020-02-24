@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Windows;
 using Newtonsoft.Json.Linq;
 
@@ -10,7 +11,8 @@ namespace Projet
     public partial class MainWindow : Window
     {
         //private object pictureBox;
-        public int sortState=0;
+        public int sortState = 0;
+        public int sortState_name = 0;
         public ObservableCollection<Product> ProductsList { get; set; }
         public MainWindow()
         {
@@ -19,7 +21,9 @@ namespace Projet
 
         public JToken getProducts(string url)
         {
-            var json = new WebClient().DownloadString(url);
+            WebClient webClient = new WebClient();
+            webClient.Encoding = Encoding.UTF8;
+            var json = webClient.DownloadString(url);
 
             return JObject.Parse(json);
         }
@@ -39,6 +43,7 @@ namespace Projet
                 //MessageBox.Show(jtoken.ToString());
                 //string picture = (string)jtoken["image_front_thumb_url"];
                 prod1.Name = (string)jtoken["product_name"];
+                prod1.Ingredients = (string)jtoken["ingredients_text"];
                 prod1.Quantity = (string)jtoken["quantity"];
                 prod1.Brand = (string)jtoken["brands"];
                 prod1.Picture_url = (string)jtoken["image_thumb_url"];
@@ -58,6 +63,7 @@ namespace Projet
             //MessageBox.Show("hey");
             //MessageBox.Show(jtoken.ToString());
             prod1.Name = (string)jtoken["product"]["product_name"];
+            prod1.Ingredients = (string)jtoken["ingredients_text"];
             prod1.Quantity = (string)jtoken["product"]["quantity"];
             prod1.Brand = (string)jtoken["product"]["brands"];
             prod1.Picture_url = (string)jtoken["product"]["image_thumb_url"];
@@ -208,18 +214,59 @@ namespace Projet
 
             if (sortState == 1)
             {
-                SortButton.Content = "Sort ↑";
+                sortState_name = 0;
+                SortButton.Content = "Sort Nutri ↑";
+                SortButton_Name.Content = "Sort Name";
                 this.ListBox1.Items.SortDescriptions.Clear();
                 this.ListBox1.Items.SortDescriptions.Add(new System.ComponentModel.SortDescription("Nutriscore", System.ComponentModel.ListSortDirection.Ascending));
             }
             else if (sortState == 2)
             {
-                SortButton.Content = "Sort ↓";
+                sortState_name = 0;
+                SortButton.Content = "Sort Nutri ↓";
+                SortButton_Name.Content = "Sort Name";
                 this.ListBox1.Items.SortDescriptions.Clear();
                 this.ListBox1.Items.SortDescriptions.Add(new System.ComponentModel.SortDescription("Nutriscore", System.ComponentModel.ListSortDirection.Descending));
             }
         }
 
+        private void SortButton_Name_Click(object sender, RoutedEventArgs e)
+        {
+            switch (sortState_name)
+            {
+                case 0:
+                    sortState_name = 1;
+                    break;
+                case 1:
+                    sortState_name = 2;
+                    break;
+                case 2:
+                    sortState_name = 1;
+                    break;
+            }
 
+            if (sortState_name == 1)
+            {
+                sortState = 0;
+                SortButton.Content = "Sort Nutri";
+                SortButton_Name.Content = "Sort Name ↑";
+                this.ListBox1.Items.SortDescriptions.Clear();
+                this.ListBox1.Items.SortDescriptions.Add(new System.ComponentModel.SortDescription("Name", System.ComponentModel.ListSortDirection.Ascending));
+            }
+            else if (sortState_name == 2)
+            {
+                sortState = 0;
+                SortButton.Content = "Sort Nutri";
+                SortButton_Name.Content = "Sort Name ↓";
+                this.ListBox1.Items.SortDescriptions.Clear();
+                this.ListBox1.Items.SortDescriptions.Add(new System.ComponentModel.SortDescription("Name", System.ComponentModel.ListSortDirection.Descending));
+            }
+        }
+
+        private void ListBox1_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            Product prod = (Product)ListBox1.SelectedItem;
+            MessageBox.Show(prod.Ingredients);
+        }
     }
 }

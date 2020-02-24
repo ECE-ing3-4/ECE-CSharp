@@ -8,8 +8,9 @@ namespace Projet
         public string Quantity { get; set; }
         public string Brand { get; set; }
         public string Nutriscore { get; set; }
+        public string Ingredients { get; set; }
 
-        
-        
+
+
     }
 }

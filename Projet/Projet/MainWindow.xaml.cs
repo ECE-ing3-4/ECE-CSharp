@@ -82,7 +82,7 @@ namespace Projet
             Product prod1 = new Product();
 
             //MessageBox.Show("hey");
-            //MessageBox.Show(jtoken.ToString());
+            MessageBox.Show(jtoken.ToString());
             //string picture = (string)jtoken["image_front_thumb_url"];
             prod1.Name = (string)jtoken["product"]["product_name"];
             prod1.Quantity = (string)jtoken["product"]["quantity"];
@@ -143,11 +143,14 @@ namespace Projet
             };
 
         }
+        
         private void GetBarCode_Click(object sender, RoutedEventArgs e)
         {
             ProductsList = new ObservableCollection<Product>();
             string code = Barcode.Text;
             string url = "https://ssl-api.openfoodfacts.org/api/v0/product/"+code;
+
+
             string status;
             JToken result;
 
@@ -175,6 +178,35 @@ namespace Projet
         {  
             //ProductsList.Clear();
             ProductsList = new ObservableCollection<Product>();
+
+            this.ListBox1.ItemsSource = ProductsList;
+        }
+
+        private void GetDesc_Click(object sender, RoutedEventArgs e)
+        {
+            
+            ProductsList = new ObservableCollection<Product>();
+            string desc = Description.Text;
+            string url = "https://fr.openfoodfacts.org/cgi/search.pl?search_terms=" + desc + "&search_simple=1&action=process&json=1";
+
+
+            JToken result;
+
+            result = getProducts(url);
+            if (Int32.TryParse(result["count"].ToString(), out int count))
+                if (count > 1)
+                {
+                    //MessageBox.Show(result.ToString());
+                    putOneInTheList(result);
+                }
+                else
+                {
+                    MessageBox.Show("Product not found");
+                }
+            else
+                Console.WriteLine("Count string could not be parsed.");
+
+            
 
             this.ListBox1.ItemsSource = ProductsList;
         }

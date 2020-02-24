@@ -13,8 +13,7 @@
                  Height="257" 
                  Margin="286,67,0,0" 
                  VerticalAlignment="Top" 
-                 Width="364" 
-                 SelectionChanged="ListBox1_SelectionChanged">
+                 Width="364" >
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -68,8 +67,8 @@
         <Button x:Name="GetAll" Content="Tout charger" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="200" Click="GetAll_Click" Height="23"/>
         <TextBox x:Name="Barcode" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="3124480182708" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="GetBarCode" Content="Charger" HorizontalAlignment="Left" Margin="135,38,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="GetBarCode_Click"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="GetDesc" Content="Charger" HorizontalAlignment="Left" Margin="135,67,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
+        <TextBox x:Name="Description" HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="GetDesc" Content="Charger" HorizontalAlignment="Left" Margin="135,67,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="GetDesc_Click"/>
         <Image x:Name="Picture" HorizontalAlignment="Left" Height="100" Margin="30,159,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="ResetButton" Content="Reset" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" Width="200" Click="ResetButton_Click"/>
 

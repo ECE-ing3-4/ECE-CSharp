@@ -189,6 +189,7 @@ namespace Projet
             this.ListBox1.ItemsSource = ProductsList;
         }
 
+<<<<<<< HEAD
         private void SortButton_Click(object sender, RoutedEventArgs e)
         {
             switch (sortState)
@@ -216,6 +217,16 @@ namespace Projet
                 this.ListBox1.Items.SortDescriptions.Clear();
                 this.ListBox1.Items.SortDescriptions.Add(new System.ComponentModel.SortDescription("Nutriscore", System.ComponentModel.ListSortDirection.Descending));
             }
+=======
+        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ListBox1_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+
+>>>>>>> 6df24ba908323e3a01b411441c5e270ee44a0d67
         }
     }
 

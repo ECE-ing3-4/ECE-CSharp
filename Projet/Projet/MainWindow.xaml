@@ -57,10 +57,10 @@
 
                         </StackPanel>
                         <Image 
-                                    Width="50"
-                                    Margin="2"
-                                    HorizontalAlignment="Left"
-                                    Source="{Binding Nutriscore}"/>
+                            Width="50"
+                            Margin="2"
+                            HorizontalAlignment="Left"
+                            Source="{Binding Nutriscore}"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -71,6 +71,7 @@
         <TextBox x:Name="Description" HorizontalAlignment="Left" Height="23" Margin="10,67,0,0" TextWrapping="Wrap" Text="Nutella" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="GetDesc" Content="Charger" HorizontalAlignment="Left" Margin="135,67,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="GetDesc_Click"/>
         <Button x:Name="ResetButton" Content="Reset" HorizontalAlignment="Left" Margin="599,417,0,0" VerticalAlignment="Top" Width="200" Click="ResetButton_Click"/>
+        <Button x:Name="SortButton" Content="Sort" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" Width="75" Click="SortButton_Click"/>
 
     </Grid>
 </Window>

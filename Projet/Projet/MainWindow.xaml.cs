@@ -10,7 +10,7 @@ namespace Projet
     public partial class MainWindow : Window
     {
         //private object pictureBox;
-
+        public int sortState=0;
         public ObservableCollection<Product> ProductsList { get; set; }
         public MainWindow()
         {
@@ -77,7 +77,8 @@ namespace Projet
 
         private void GetAll_Click(object sender, RoutedEventArgs e)
         {
-
+            //sortState = 0;
+            //SortButton.Content = "Sort";
             ProductsList = new ObservableCollection<Product>();
             loadAllProducts();
             this.ListBox1.ItemsSource = ProductsList;
@@ -117,6 +118,9 @@ namespace Projet
         
         private void GetBarCode_Click(object sender, RoutedEventArgs e)
         {
+            //sortState = 0;
+            //SortButton.Content = "Sort";
+
             ProductsList = new ObservableCollection<Product>();
             string code = Barcode.Text;
             string url = "https://ssl-api.openfoodfacts.org/api/v0/product/"+code;
@@ -146,7 +150,9 @@ namespace Projet
         }
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
-        {  
+        {
+            //sortState = 0;
+            //SortButton.Content = "Sort";
             //ProductsList.Clear();
             ProductsList = new ObservableCollection<Product>();
 
@@ -155,7 +161,8 @@ namespace Projet
 
         private void GetDesc_Click(object sender, RoutedEventArgs e)
         {
-            
+            //sortState = 0;
+            //SortButton.Content = "Sort";
             ProductsList = new ObservableCollection<Product>();
             string desc = Description.Text;
             string url = "https://fr.openfoodfacts.org/cgi/search.pl?search_terms=" + desc + "&search_simple=1&action=process&json=1";
@@ -180,6 +187,35 @@ namespace Projet
             
 
             this.ListBox1.ItemsSource = ProductsList;
+        }
+
+        private void SortButton_Click(object sender, RoutedEventArgs e)
+        {
+            switch (sortState)
+            {
+                case 0:
+                    sortState = 1;
+                    break;
+                case 1:
+                    sortState = 2;
+                    break;
+                case 2:
+                    sortState = 1;
+                    break;
+            }
+
+            if (sortState == 1)
+            {
+                SortButton.Content = "Sort ↑";
+                this.ListBox1.Items.SortDescriptions.Clear();
+                this.ListBox1.Items.SortDescriptions.Add(new System.ComponentModel.SortDescription("Nutriscore", System.ComponentModel.ListSortDirection.Ascending));
+            }
+            else if (sortState == 2)
+            {
+                SortButton.Content = "Sort ↓";
+                this.ListBox1.Items.SortDescriptions.Clear();
+                this.ListBox1.Items.SortDescriptions.Add(new System.ComponentModel.SortDescription("Nutriscore", System.ComponentModel.ListSortDirection.Descending));
+            }
         }
     }
 

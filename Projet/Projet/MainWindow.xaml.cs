@@ -17,26 +17,6 @@ namespace Projet
             InitializeComponent();
         }
 
-        private void Exception()
-        {
-            throw new NotImplementedException();
-        }
-        /*
-        private void OpenImage(string url)
-        {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
-            try
-            {
-                HttpWebResponse response = (HttpWebResponse)req.GetResponse();
-                if (response.StatusCode == HttpStatusCode.OK)
-                {
-                    pictureBox.Image = new Bitmap(response.GetResponseStream);
-                }
-            }
-            catch Exception(){ }
-            }
-        }*/
-
         public JToken getProducts(string url)
         {
             var json = new WebClient().DownloadString(url);
@@ -51,9 +31,8 @@ namespace Projet
 
         private void putInTheList(JToken jtokens)
         {
-            //ListBoxItem product;
             Product prod1 = new Product();
-
+            //MessageBox.Show(jtokens.ToString());
             foreach (JToken jtoken in jtokens)
             {
                 prod1 = new Product();
@@ -63,14 +42,10 @@ namespace Projet
                 prod1.Quantity = (string)jtoken["quantity"];
                 prod1.Brand = (string)jtoken["brands"];
                 prod1.Picture_url = (string)jtoken["image_thumb_url"];
-                prod1.Nutriscore = (string)jtoken["nutriscore_grade"]; 
+                prod1.Nutriscore = display_nutriscore((string)jtoken["nutriscore_grade"]); 
 
                 if (!String.IsNullOrEmpty(prod1.Name))
                 {
-
-                    //product = new ListBoxItem();
-                    //product.Content = prod1.Name + " : " + prod1.Quantity + " : " + prod1.Brand;
-                    //product.Source= picture;
                     ProductsList.Add(prod1);
                 }
             }
@@ -78,33 +53,19 @@ namespace Projet
 
         private void putOneInTheList(JToken jtoken)
         {
-            //ListBoxItem product;
             Product prod1 = new Product();
 
             //MessageBox.Show("hey");
-            MessageBox.Show(jtoken.ToString());
-            //string picture = (string)jtoken["image_front_thumb_url"];
+            //MessageBox.Show(jtoken.ToString());
             prod1.Name = (string)jtoken["product"]["product_name"];
             prod1.Quantity = (string)jtoken["product"]["quantity"];
             prod1.Brand = (string)jtoken["product"]["brands"];
             prod1.Picture_url = (string)jtoken["product"]["image_thumb_url"];
             prod1.Nutriscore = display_nutriscore((string)jtoken["product"]["nutriscore_grade"]);
-            //test1.Picture_url = 
-            //string name = (string)jtoken["product_name"];
-            //string quantity = (string)jtoken["quantity"];
-            //string brands = (string)jtoken["brands"];
-            //MessageBox.Show((string)jtoken["product_name"]);
-            //MessageBox.Show(prod1.Name);
-
+            
             if (!String.IsNullOrEmpty(prod1.Name))
             {
-
-                //product = new ListBoxItem();
-                //product.Content = prod1.Name + " : " + prod1.Quantity + " : " + prod1.Brand;
-                //MessageBox.Show(prod1.Name + " : " + prod1.Quantity + " : " + prod1.Brand);
-                //MessageBox.Show(ProductsList.Count.ToString());
                 ProductsList.Add(prod1);
-                //MessageBox.Show(ProductsList.Count.ToString());
             }
         }
 
@@ -124,19 +85,29 @@ namespace Projet
 
         public string display_nutriscore(string value)
         {
-            value = value.ToLower();
+            //MessageBox.Show(value);
+            try
+            {
+                value = value.ToLower();
+            }
+            catch (Exception ex)
+            {
+                //No nutriscore
+                return ("");
+            }
+
             switch (value)
             {
                 case "a":
-                    return "D:/Documents/ECE/ing4/C#/CSharp/Pictures/nutrition_A.jpg";
+                    return "./Pictures/nutrition_A.jpg";
                 case "b":
-                    return "D:/Documents/ECE/ing4/C#/CSharp/Pictures/nutrition_B.jpg";
+                    return "./Pictures/nutrition_B.jpg";
                 case "c":
-                    return "D:/Documents/ECE/ing4/C#/CSharp/Pictures/nutrition_C.jpg";
+                    return "./Pictures/nutrition_C.jpg";
                 case "d":
-                    return "D:/Documents/ECE/ing4/C#/CSharp/Pictures/nutrition_D.jpg";
+                    return "./Pictures/nutrition_D.jpg";
                 case "e":
-                    return "D:/Documents/ECE/ing4/C#/CSharp/Pictures/nutrition_E.jpg";
+                    return "./Pictures/nutrition_E.jpg";
                 default:
                     return ("");
 
@@ -197,7 +168,7 @@ namespace Projet
                 if (count > 1)
                 {
                     //MessageBox.Show(result.ToString());
-                    putOneInTheList(result);
+                    putInTheList(result["products"]);
                 }
                 else
                 {

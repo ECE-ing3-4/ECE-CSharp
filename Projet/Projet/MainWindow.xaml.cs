@@ -93,7 +93,7 @@ namespace Projet
             catch (Exception ex)
             {
                 //No nutriscore
-                return ("");
+                return("./Pictures/nutrition_none.jpg");
             }
 
             switch (value)
@@ -109,7 +109,7 @@ namespace Projet
                 case "e":
                     return "./Pictures/nutrition_E.jpg";
                 default:
-                    return ("D:/Documents/ECE/ing4/C#/CSharp/Pictures/nutrition_none.jpg");
+                    return ("./Pictures/nutrition_none.jpg");
 
             };
 

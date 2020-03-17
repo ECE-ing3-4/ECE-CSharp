@@ -47,7 +47,8 @@ namespace Projet
                 prod1.Quantity = (string)jtoken["quantity"];
                 prod1.Brand = (string)jtoken["brands"];
                 prod1.Picture_url = (string)jtoken["image_thumb_url"];
-                prod1.Nutriscore = display_nutriscore((string)jtoken["nutriscore_grade"]); 
+                prod1.Nutriscore = display_nutriscore((string)jtoken["nutriscore_grade"]);
+                prod1.Code_barre = (string)jtoken["id"];
 
                 if (!String.IsNullOrEmpty(prod1.Name))
                 {
@@ -267,6 +268,13 @@ namespace Projet
         {
             Product prod = (Product)ListBox1.SelectedItem;
             MessageBox.Show(prod.Ingredients);
+        }
+
+        private string GetLink(){
+
+            Product prod = (Product)ListBox1.SelectedItem;
+            return "https://fr.openfoodfacts.org/produit/" + prod.Code_barre;
+
         }
     }
 }

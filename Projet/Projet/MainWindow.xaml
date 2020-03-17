@@ -69,12 +69,12 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button x:Name="GetAll" Content="Tout charger" HorizontalAlignment="Left" Background="Green" Margin="57,318.4,0,0" VerticalAlignment="Top" Width="227" Click="GetAll_Click" Height="28" BorderBrush="DarkSlateBlue" BorderThickness="1.5" Grid.Row="1" FontWeight="Bold" FontSize="16"/>
-        <TextBox x:Name="Barcode" HorizontalAlignment="Left" Height="23" Margin="18,47.4,0,0" TextWrapping="Wrap" Text="3124480182708" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-        <Button x:Name="GetBarCode" Content="Charger" HorizontalAlignment="Left" Margin="182,47.4,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="GetBarCode_Click" Grid.Row="1"/>
-        <TextBox x:Name="Description" HorizontalAlignment="Left" Height="23" Margin="18,109.4,0,0" TextWrapping="Wrap" Text="Nutella" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-        <Button x:Name="GetDesc" Content="Charger" HorizontalAlignment="Left" Margin="182,109.4,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="GetDesc_Click" Grid.Row="1"/>
-        <Button x:Name="ResetButton" Background="Red"  Content="Reset" HorizontalAlignment="Left" Margin="57,273.4,0,0" VerticalAlignment="Top" Width="227" Click="ResetButton_Click" Grid.Row="1" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="GetAll" Content="Tout charger" HorizontalAlignment="Left" Background="Green" Margin="46,315.4,0,0" VerticalAlignment="Top" Width="239" Click="GetAll_Click" Height="28" BorderBrush="DarkSlateBlue" BorderThickness="1.5" Grid.Row="1" FontWeight="Bold" FontSize="16"/>
+        <TextBox x:Name="Barcode" HorizontalAlignment="Left" Height="23" Margin="46,75.4,0,0" TextWrapping="Wrap" Text="3124480182708" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+        <Button x:Name="GetBarCode" Content="Charger" HorizontalAlignment="Left" Margin="210,75.4,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="GetBarCode_Click" Grid.Row="1"/>
+        <TextBox x:Name="Description" HorizontalAlignment="Left" Height="23" Margin="45,128.4,0,0" TextWrapping="Wrap" Text="Nutella" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+        <Button x:Name="GetDesc" Content="Charger" HorizontalAlignment="Left" Margin="210,128.4,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="GetDesc_Click" Grid.Row="1"/>
+        <Button x:Name="ResetButton" Background="Red"  Content="Reset" HorizontalAlignment="Left" Margin="46,273.4,0,0" VerticalAlignment="Top" Width="239" Click="ResetButton_Click" Grid.Row="1" FontWeight="Bold" FontSize="14"/>
         <TextBox Height="96" Margin="201,0,218,0" TextWrapping="Wrap" Text="Open Foodfacts" Width="473" Background="{x:Null}" FontWeight="Bold" FontSize="72" TextDecorations="{x:Null}" FontFamily="Monotype Corsiva" AcceptsReturn="True" BorderBrush="{x:Null}" RenderTransformOrigin="1.039,0.725" IsReadOnly="True" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.RowSpan="2">
             <TextBox.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -85,7 +85,11 @@
         </TextBox>
         <Button x:Name="SortButton" Background="Gray" Content="Sort Nutri" HorizontalAlignment="Left" Margin="674,15.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="SortButton_Click"/>
         <Button x:Name="SortButton_Name" Background="Gray" Content="Sort Name" HorizontalAlignment="Left" Margin="444,15.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="SortButton_Name_Click" RenderTransformOrigin="0.888,0.569"/>
-        <Rectangle x:Name="Cadre_1" HorizontalAlignment="Left" Height="111" Margin="40,253.4,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="262" StrokeThickness="5"/>
+        <Rectangle x:Name="Cadre_1" HorizontalAlignment="Left" Height="111" Margin="30,253.4,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="272" StrokeThickness="5"/>
+        <Label Content="Recherche:" HorizontalAlignment="Left" Margin="78,10.4,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF2DB61F" Height="48" Width="176" FontSize="17" TextOptions.TextHintingMode="Fixed" TextOptions.TextFormattingMode="Display" HorizontalContentAlignment="Center" IsHitTestVisible="False"/>
+        <Label Content="By barcode" HorizontalAlignment="Left" Margin="19,42.4,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF1F8DB6" Height="33" Width="147" FontSize="16" TextOptions.TextHintingMode="Fixed" TextOptions.TextFormattingMode="Display" HorizontalContentAlignment="Center" IsHitTestVisible="False"/>
+        <Label Content="By name" HorizontalAlignment="Left" Margin="18,95.4,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" Foreground="#FF1F8DB6" Height="33" Width="127" FontSize="16" TextOptions.TextHintingMode="Fixed" TextOptions.TextFormattingMode="Display" HorizontalContentAlignment="Center" IsHitTestVisible="False"/>
+        <Rectangle x:Name="Cadre_1_Copy" HorizontalAlignment="Left" Height="160" Margin="30,10.4,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="272" StrokeThickness="5"/>
 
     </Grid>
 </Window>

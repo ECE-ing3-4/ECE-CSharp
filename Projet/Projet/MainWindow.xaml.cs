@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -267,6 +268,11 @@ namespace Projet
         {
             Product prod = (Product)ListBox1.SelectedItem;
             MessageBox.Show(prod.Ingredients);
+        }
+
+        private void ExternalOpen_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("www.google.com");
         }
     }
 }

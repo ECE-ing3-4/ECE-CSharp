@@ -86,7 +86,7 @@
         <Button x:Name="SortButton" Background="Gray" Content="Sort by nutriscore" HorizontalAlignment="Left" Margin="635,10.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="128" Click="SortButton_Click"/>
         <Button x:Name="SortButton_Name" Background="Gray" Content="Sort by name" HorizontalAlignment="Left" Margin="429,10.4,0,0" VerticalAlignment="Top" Width="128" Click="SortButton_Name_Click" RenderTransformOrigin="0.888,0.569" Grid.Row="1"/>
         <Rectangle x:Name="Cadre_1" HorizontalAlignment="Left" Height="128" Margin="18,234.4,0,0" Grid.Row="1" Stroke="Black" VerticalAlignment="Top" Width="286" StrokeThickness="5"/>
-        <Button x:Name="ExternalOpen" Content="En savoir plus" HorizontalAlignment="Left" Margin="18,171.4,0,0" VerticalAlignment="Top" Width="286" Height="27" Click="GetDesc_Click" Grid.Row="1"/>
+        <Button x:Name="ExternalOpen" Content="En savoir plus" HorizontalAlignment="Left" Margin="18,171.4,0,0" VerticalAlignment="Top" Width="286" Height="27" Grid.Row="1" Click="ExternalOpen_Click"/>
 
     </Grid>
 </Window>

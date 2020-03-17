@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Projet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="900" Background="#FF222434" BorderBrush="White" BorderThickness="1."
+        Title="MainWindow" Height="500" Width="900" Background="#FF484848" BorderBrush="White" BorderThickness="1."
         ResizeMode="NoResize" >
-    <Grid Background="#FF1B192E">
+    <Grid Background="#FF4C4C4E">
         <Grid.RowDefinitions>
             <RowDefinition Height="78*"/>
             <RowDefinition Height="391*"/>
@@ -69,6 +69,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+<<<<<<< HEAD
         <Button x:Name="GetAll" Content="Tout charger" HorizontalAlignment="Left" Background="Green" Margin="46,315.4,0,0" VerticalAlignment="Top" Width="239" Click="GetAll_Click" Height="28" BorderBrush="DarkSlateBlue" BorderThickness="1.5" Grid.Row="1" FontWeight="Bold" FontSize="16"/>
         <TextBox x:Name="Barcode" HorizontalAlignment="Left" Height="23" Margin="46,75.4,0,0" TextWrapping="Wrap" Text="3124480182708" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
         <Button x:Name="GetBarCode" Content="Charger" HorizontalAlignment="Left" Margin="210,75.4,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="GetBarCode_Click" Grid.Row="1"/>
@@ -76,6 +77,15 @@
         <Button x:Name="GetDesc" Content="Charger" HorizontalAlignment="Left" Margin="210,128.4,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="GetDesc_Click" Grid.Row="1"/>
         <Button x:Name="ResetButton" Background="Red"  Content="Reset" HorizontalAlignment="Left" Margin="46,273.4,0,0" VerticalAlignment="Top" Width="239" Click="ResetButton_Click" Grid.Row="1" FontWeight="Bold" FontSize="14"/>
         <TextBox Height="96" Margin="201,0,218,0" TextWrapping="Wrap" Text="Open Foodfacts" Width="473" Background="{x:Null}" FontWeight="Bold" FontSize="72" TextDecorations="{x:Null}" FontFamily="Monotype Corsiva" AcceptsReturn="True" BorderBrush="{x:Null}" RenderTransformOrigin="1.039,0.725" IsReadOnly="True" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.RowSpan="2">
+=======
+        <Button x:Name="GetAll" Content="Tout charger" HorizontalAlignment="Left" Background="Green" Margin="57,318.4,0,0" VerticalAlignment="Top" Width="227" Click="GetAll_Click" Height="28" BorderBrush="DarkSlateBlue" BorderThickness="1.5" Grid.Row="1" FontWeight="Bold" FontSize="16"/>
+        <TextBox x:Name="Barcode" HorizontalAlignment="Left" Height="23" Margin="18,47.4,0,0" TextWrapping="Wrap" Text="3124480182708" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+        <Button x:Name="GetBarCode" Content="Charger" HorizontalAlignment="Left" Margin="182,47.4,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="GetBarCode_Click" Grid.Row="1"/>
+        <TextBox x:Name="Description" HorizontalAlignment="Left" Height="23" Margin="18,109.4,0,0" TextWrapping="Wrap" Text="Nutella" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+        <Button x:Name="GetDesc" Content="Charger" HorizontalAlignment="Left" Margin="182,109.4,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="GetDesc_Click" Grid.Row="1"/>
+        <Button x:Name="ResetButton" Background="Red"  Content="Reset" HorizontalAlignment="Left" Margin="57,273.4,0,0" VerticalAlignment="Top" Width="227" Click="ResetButton_Click" Grid.Row="1" FontWeight="Bold" FontSize="14"/>
+        <TextBox Height="96" Margin="201,0,218,0" TextWrapping="Wrap" Text="Open Foodfacts" Width="473" Background="{x:Null}" FontWeight="Bold" FontSize="48" TextDecorations="{x:Null}" FontFamily="Monotype Corsiva" AcceptsReturn="True" BorderBrush="{x:Null}" RenderTransformOrigin="1.039,0.725" IsReadOnly="True" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.RowSpan="2">
+>>>>>>> 15dbe0fa397818e4a1e4152160cb020b9c2bd636
             <TextBox.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="#FF7C947D"/>

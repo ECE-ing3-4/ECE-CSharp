@@ -270,18 +270,16 @@ namespace Projet
             Product prod = (Product)ListBox1.SelectedItem;
             MessageBox.Show(prod.Ingredients);
         }
-
-<<<<<<< HEAD
         private string GetLink(System.Windows.Input.MouseButtonEventArgs e)
         {
             Product prod = (Product)ListBox1.SelectedItem;
             return "https://fr.openfoodfacts.org/produit/" + prod.Code_barre;
+        }
 
-=======
         private void ExternalOpen_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("www.google.com");
->>>>>>> e5f329afa522d756b12508e731f15c6c3a90c315
+
         }
     }
 }

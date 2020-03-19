@@ -20,36 +20,40 @@ namespace Projet
             InitializeComponent();
         }
 
-        public JToken getProducts(string url)
+        public JToken GetProducts(string url)
         {
-            WebClient webClient = new WebClient();
-            webClient.Encoding = Encoding.UTF8;
+            WebClient webClient = new WebClient
+            {
+                Encoding = Encoding.UTF8
+            };
             var json = webClient.DownloadString(url);
 
             return JObject.Parse(json);
         }
-        private JToken getAllProducts()
+        private JToken GetAllProducts()
         {
             const string url = "https://fr.openfoodfacts.org/categorie/pains.json";
-            return getProducts(url);
+            return GetProducts(url);
         }
 
-        private void putInTheList(JToken jtokens)
+        private void PutInTheList(JToken jtokens)
         {
-            Product prod1 = new Product();
+            _ = new Product();
             //MessageBox.Show(jtokens.ToString());
             foreach (JToken jtoken in jtokens)
             {
-                prod1 = new Product();
-                //MessageBox.Show(jtoken.ToString());
-                //string picture = (string)jtoken["image_front_thumb_url"];
-                prod1.Name = (string)jtoken["product_name"];
-                prod1.Ingredients = (string)jtoken["ingredients_text"];
-                prod1.Quantity = (string)jtoken["quantity"];
-                prod1.Brand = (string)jtoken["brands"];
-                prod1.Picture_url = (string)jtoken["image_thumb_url"];
-                prod1.Nutriscore = display_nutriscore((string)jtoken["nutriscore_grade"]);
-                prod1.Code_barre = (string)jtoken["id"];
+                Product prod1 = new Product
+                {
+                    //MessageBox.Show(jtoken.ToString());
+                    //string picture = (string)jtoken["image_front_thumb_url"];
+                    Name = (string)jtoken["product_name"],
+                    Ingredients = (string)jtoken["ingredients_text"],
+                    Quantity = (string)jtoken["quantity"],
+                    Brand = (string)jtoken["brands"],
+                    Picture_url = (string)jtoken["image_thumb_url"],
+                    Nutriscore = Display_nutriscore((string)jtoken["nutriscore_grade"]),
+                    Code_barre = (string)jtoken["id"]
+                };
 
                 if (!String.IsNullOrEmpty(prod1.Name))
                 {
@@ -58,29 +62,30 @@ namespace Projet
             }
         }
 
-        private void putOneInTheList(JToken jtoken)
+        private void PutOneInTheList(JToken jtoken)
         {
-            Product prod1 = new Product();
+            Product prod1 = new Product
+            {
+                //MessageBox.Show("hey");
+                //MessageBox.Show(jtoken.ToString());
+                Name = (string)jtoken["product"]["product_name"],
+                Ingredients = (string)jtoken["ingredients_text"],
+                Quantity = (string)jtoken["product"]["quantity"],
+                Brand = (string)jtoken["product"]["brands"],
+                Picture_url = (string)jtoken["product"]["image_thumb_url"],
+                Nutriscore = Display_nutriscore((string)jtoken["product"]["nutriscore_grade"])
+            };
 
-            //MessageBox.Show("hey");
-            //MessageBox.Show(jtoken.ToString());
-            prod1.Name = (string)jtoken["product"]["product_name"];
-            prod1.Ingredients = (string)jtoken["ingredients_text"];
-            prod1.Quantity = (string)jtoken["product"]["quantity"];
-            prod1.Brand = (string)jtoken["product"]["brands"];
-            prod1.Picture_url = (string)jtoken["product"]["image_thumb_url"];
-            prod1.Nutriscore = display_nutriscore((string)jtoken["product"]["nutriscore_grade"]);
-            
             if (!String.IsNullOrEmpty(prod1.Name))
             {
                 ProductsList.Add(prod1);
             }
         }
 
-        private void loadAllProducts()
+        private void LoadAllProducts()
         {
-            JToken jtokens = getAllProducts()["products"];
-            putInTheList(jtokens);
+            JToken jtokens = GetAllProducts()["products"];
+            PutInTheList(jtokens);
         }
 
         private void GetAll_Click(object sender, RoutedEventArgs e)
@@ -88,18 +93,18 @@ namespace Projet
             //sortState = 0;
             //SortButton.Content = "Sort";
             ProductsList = new ObservableCollection<Product>();
-            loadAllProducts();
+            LoadAllProducts();
             this.ListBox1.ItemsSource = ProductsList;
         }
 
-        public string display_nutriscore(string value)
+        public string Display_nutriscore(string value)
         {
             //MessageBox.Show(value);
             try
             {
                 value = value.ToLower();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //No nutriscore
                 return "./Pictures/nutrition_none.jpg";
@@ -140,12 +145,12 @@ namespace Projet
 
             if (code.All(char.IsDigit))
             {
-                result = getProducts(url);
+                result = GetProducts(url);
                 status = result["status"].ToString();
                 //result = result["product"];
                 if (status == "1"){
                     //MessageBox.Show(result.ToString());
-                    putOneInTheList(result);
+                    PutOneInTheList(result);
                 }
                 else
                 {
@@ -180,12 +185,12 @@ namespace Projet
 
             JToken result;
 
-            result = getProducts(url);
+            result = GetProducts(url);
             if (Int32.TryParse(result["count"].ToString(), out int count))
                 if (count > 1)
                 {
                     //MessageBox.Show(result.ToString());
-                    putInTheList(result["products"]);
+                    PutInTheList(result["products"]);
                 }
                 else
                 {

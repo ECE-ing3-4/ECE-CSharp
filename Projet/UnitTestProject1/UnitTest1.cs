@@ -14,7 +14,7 @@ namespace UnitTestProject1
             //Projet.MainWindow;
             MainWindow a = new MainWindow();
             const string url = "https://ssl-api.openfoodfacts.org/api/v0/product/3124480182708";
-            JToken tok = a.getProducts(url);
+            JToken tok = a.GetProducts(url);
             tok = tok["product"]["product_name"];
             //MessageBox.Show((string)tok);
             string name = (string)tok;

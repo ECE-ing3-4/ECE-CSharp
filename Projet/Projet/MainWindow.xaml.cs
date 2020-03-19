@@ -72,7 +72,7 @@ namespace Projet
                 //MessageBox.Show("hey");
                 //MessageBox.Show(jtoken.ToString());
                 Name = (string)jtoken["product"]["product_name"],
-                Ingredients = (string)jtoken["ingredients_text"],
+                Ingredients = (string)jtoken["product"]["ingredients_text"],
                 Quantity = (string)jtoken["product"]["quantity"],
                 Brand = (string)jtoken["product"]["brands"],
                 Picture_url = (string)jtoken["product"]["image_thumb_url"],
@@ -277,7 +277,14 @@ namespace Projet
         private void ListBox1_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             Product prod = (Product)ListBox1.SelectedItem;
-            MessageBox.Show(prod.Ingredients);
+            if (prod.Ingredients == "")
+            {
+                MessageBox.Show("No ingredients were available for this product");
+            }
+            else
+            {
+                MessageBox.Show(prod.Ingredients);
+            }
         }
         private string GetLink(Product prod)
         {

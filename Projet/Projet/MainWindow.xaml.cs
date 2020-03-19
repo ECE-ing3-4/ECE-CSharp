@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
 using Newtonsoft.Json.Linq;
 
 namespace Projet
@@ -14,6 +15,7 @@ namespace Projet
         //private object pictureBox;
         public int sortState = 0;
         public int sortState_name = 0;
+        public Product currentSelectedProduct;
         public ObservableCollection<Product> ProductsList { get; set; }
         public MainWindow()
         {
@@ -53,6 +55,7 @@ namespace Projet
                     Picture_url = (string)jtoken["image_thumb_url"],
                     Nutriscore = Display_nutriscore((string)jtoken["nutriscore_grade"]),
                     Code_barre = (string)jtoken["id"]
+
                 };
 
                 if (!String.IsNullOrEmpty(prod1.Name))
@@ -73,7 +76,8 @@ namespace Projet
                 Quantity = (string)jtoken["product"]["quantity"],
                 Brand = (string)jtoken["product"]["brands"],
                 Picture_url = (string)jtoken["product"]["image_thumb_url"],
-                Nutriscore = Display_nutriscore((string)jtoken["product"]["nutriscore_grade"])
+                Nutriscore = Display_nutriscore((string)jtoken["product"]["nutriscore_grade"]),
+                Code_barre = (string)jtoken["product"]["id"]
             };
 
             if (!String.IsNullOrEmpty(prod1.Name))
@@ -275,16 +279,25 @@ namespace Projet
             Product prod = (Product)ListBox1.SelectedItem;
             MessageBox.Show(prod.Ingredients);
         }
-        private string GetLink(System.Windows.Input.MouseButtonEventArgs e)
+        private string GetLink(Product prod)
         {
-            Product prod = (Product)ListBox1.SelectedItem;
             return "https://fr.openfoodfacts.org/produit/" + prod.Code_barre;
+        }
+        private void ListBox1_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var prod = (Product)ListBox1.SelectedItem;
+            currentSelectedProduct = prod;
         }
 
         private void ExternalOpen_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("www.google.com");
-
+            try
+            {
+                Process.Start(GetLink(currentSelectedProduct));
+            }
+            catch (Exception) {
+                MessageBox.Show("Error getting the product link, please make sure a product is selected.");
+            }
         }
     }
 }

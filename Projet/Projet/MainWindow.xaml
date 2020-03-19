@@ -14,6 +14,7 @@
         </Grid.RowDefinitions>
         <ListBox x:Name="ListBox1" 
                  ItemsSource="{Binding ProductsList}" 
+                 SelectionChanged="ListBox1_OnSelectionChanged"
                  HorizontalAlignment="Left" 
                  Height="318" 
                  Margin="344,46.4,0,0" 

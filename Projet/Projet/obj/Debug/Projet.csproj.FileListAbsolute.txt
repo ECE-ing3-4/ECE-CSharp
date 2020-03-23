@@ -88,3 +88,5 @@ D:\ECE\ing4\C#\ECE-CSharp\Projet\Projet\obj\Debug\Projet.exe
 D:\ECE\ing4\C#\ECE-CSharp\Projet\Projet\obj\Debug\Projet.pdb
 D:\ECE\ing4\C#\ECE-CSharp\Projet\Projet\bin\Debug\itextsharp.dll
 D:\ECE\ing4\C#\ECE-CSharp\Projet\Projet\bin\Debug\itextsharp.xml
+D:\ECE\ing4\C#\ECE-CSharp\Projet\Projet\bin\Debug\Projet.exe.CodeAnalysisLog.xml
+D:\ECE\ing4\C#\ECE-CSharp\Projet\Projet\bin\Debug\Projet.exe.lastcodeanalysissucceeded

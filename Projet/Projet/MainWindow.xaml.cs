@@ -132,7 +132,7 @@ namespace Projet
             };
 
         }
-        
+
         private void GetBarCode_Click(object sender, RoutedEventArgs e)
         {
             //sortState = 0;
@@ -141,7 +141,7 @@ namespace Projet
             ProductsList = new ObservableCollection<Product>();
             string code = Barcode.Text;
             Barcode.Text = "";
-            string url = "https://ssl-api.openfoodfacts.org/api/v0/product/"+code;
+            string url = "https://ssl-api.openfoodfacts.org/api/v0/product/" + code;
 
 
             string status;
@@ -152,7 +152,8 @@ namespace Projet
                 result = GetProducts(url);
                 status = result["status"].ToString();
                 //result = result["product"];
-                if (status == "1"){
+                if (status == "1")
+                {
                     //MessageBox.Show(result.ToString());
                     PutOneInTheList(result);
                 }
@@ -203,7 +204,7 @@ namespace Projet
             else
                 Console.WriteLine("Count string could not be parsed.");
 
-            
+
 
             this.ListBox1.ItemsSource = ProductsList;
         }
@@ -302,7 +303,8 @@ namespace Projet
             {
                 Process.Start(GetLink(currentSelectedProduct));
             }
-            catch (Exception) {
+            catch (Exception)
+            {
                 MessageBox.Show("Error getting the product link, please make sure a product is selected.");
             }
         }

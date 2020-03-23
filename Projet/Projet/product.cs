@@ -9,7 +9,7 @@ namespace Projet
         public string Brand { get; set; }
         public string Nutriscore { get; set; }
         public string Ingredients { get; set; }
-        public string Code_barre { get;  set; }
+        public string Code_barre { get; set; }
 
 
 

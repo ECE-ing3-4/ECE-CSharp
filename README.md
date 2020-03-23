@@ -19,4 +19,4 @@ Ouvrir le projet via le .sln par exemple. Puis appuyer sur start pour lancer le 
 * **DIREZ Alexis** _alias_ [@alexisD95](https://github.com/alexisD95)
 * **SEGARD Neil** _alias_ [@NeilSCGH](https://github.com/NeilSCGH)
 
-![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)
+!(http://forthebadge.com/images/badges/built-with-love.svg)

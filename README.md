@@ -1,7 +1,5 @@
 # Projet C-Sharp
 
-![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)
-
 Ce répo contient le code source de l'application developpée en C-Sharp et l'API d'OpenFoodFacts. Le but étant de fournir via une interface visuelle les informations provenants de l'API.
 
 ## Pour commencer
@@ -20,3 +18,5 @@ Ouvrir le projet via le .sln par exemple. Puis appuyer sur start pour lancer le 
 ## Auteurs
 * **DIREZ Alexis** _alias_ [@alexisD95](https://github.com/alexisD95)
 * **SEGARD Neil** _alias_ [@NeilSCGH](https://github.com/NeilSCGH)
+
+![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)
